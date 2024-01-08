@@ -6,17 +6,18 @@
 
 /* font-family: 'Open Sans', sans-serif;
 font-family: 'Raleway', sans-serif; */
+:root {
+  --primary-color: #303030;
+  --second-color: #ffffff;
+  --accent-color: #ff6c00;
+  --text-primary-color: #555555;
+  --text-second-color: #9da4bd;
+  --white-bg-color: #f7f7f7;
+  --black-bg-color: #111319;
 
-$primary-color: #303030;
-$second-color: #ffffff;
-$accent-color: #ff6c00;
-$text-primary-color: #555555;
-$text-second-color: #9da4bd;
-$white-bg-color: #f7f7f7;
-$black-bg-color: #111319;
-
-$primary-fonts: "Open Sans";
-$accent-fonts: "Raleway";
+  --primary-fonts: "Open Sans";
+  --accent-fonts: "Raleway";
+}
 
 p,
 h1,
@@ -107,10 +108,10 @@ body {
 
 /* можно еще так */
 
-// header .container {
+/* // header .container {
 //   display: flex;
 //   align-items: center;
-// }
+// } */
 
 .header__logo {
   padding: 32px 0px;
@@ -135,17 +136,32 @@ body {
   margin-left: 30px;
 } */
 
+.active {
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--second-color);
+  &:hover,
+  &:focus {
+    transition: color 0.75s, transform 0.75s;
+    transform: scale(1.1);
+    color: var(--accent-color);
+  }
+}
+
+.bg__btn {
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    transition: color 0.75s, transform 0.75s;
+    transform: scale(1.1);
+    background: var(--accent-color);
+  }
+}
+
 .header__link {
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.1em;
-  color: $second-color;
-
-  &--active:hover,
-  &--active:focus {
-    color: $accent-color;
-  }
 }
 
 .header__contact {
@@ -158,7 +174,7 @@ body {
   line-height: 1.33;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: $second-color;
+  color: var(--second-color);
 }
 
 .header__button {
@@ -168,18 +184,13 @@ body {
   line-height: 1.33;
   text-transform: uppercase;
   letter-spacing: 0.09em;
-  color: $second-color;
-  border: 1px solid $accent-color;
+  color: var(--second-color);
+  border: 1px solid var(--accent-color);
   border-radius: 25px;
   margin-left: 40px;
   min-width: 160px;
   height: 40px;
   margin-right: 20px;
-
-  &--active:hover,
-  &--active:focus {
-    background: $accent-color;
-  }
 }
 
 /* <-----------main-----------> */
@@ -220,23 +231,27 @@ body {
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
-  color: $primary-color;
+  color: var(--primary-color);
   letter-spacing: 0.2em;
 
   &--active:hover,
   &--active:focus {
-    color: $accent-color;
+    color: var(--accent-color);
   }
 }
 
 .hero__wrap {
   padding: 272px 526px 208px 100px;
   flex-grow: 1;
-  background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)), url(../images/hero-bg.jpg);
+  background-image: linear-gradient(
+      rgba(25, 28, 38, 0.2),
+      rgba(25, 28, 38, 0.2)
+    ),
+    url(../images/hero-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: $primary-color;
+  background-color: var(--primary-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -253,7 +268,7 @@ body {
   font-weight: 700;
   font-size: 72px;
   line-height: 1.18;
-  color: $second-color;
+  color: var(--second-color);
   letter-spacing: 0.05em;
   margin-bottom: 20px;
 }
@@ -262,7 +277,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.66;
-  color: $text-second-color;
+  color: var(--text-second-color);
   letter-spacing: 0.02em;
   max-width: 370px;
 }
@@ -294,7 +309,7 @@ body {
   font-size: 11px;
   line-height: 1.36;
   text-transform: uppercase;
-  color: $primary-color;
+  color: var(--primary-color);
   margin-bottom: 20px;
 }
 
@@ -302,7 +317,7 @@ body {
   font-weight: 700;
   font-size: 42px;
   line-height: 1.16;
-  color: $primary-color;
+  color: var(--primary-color);
   letter-spacing: 0.05em;
   margin-bottom: 20px;
 }
@@ -311,7 +326,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.66;
-  color: $text-primary-color;
+  color: var(--text-primary-color);
   letter-spacing: 0.02em;
   margin-bottom: 20px;
 }
@@ -320,7 +335,7 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.85;
-  color: $text-primary-color;
+  color: var(--text-primary-color);
   letter-spacing: 0.02em;
   margin-bottom: 42px;
 }
@@ -331,8 +346,8 @@ body {
   font-size: 12px;
   line-height: 1.33;
   text-transform: uppercase;
-  color: $primary-color;
-  border: 1px solid $accent-color;
+  color: var(--primary-color);
+  border: 1px solid var(--accent-color);
   border-radius: 25px;
   letter-spacing: 0.09em;
   min-width: 160px;
@@ -340,8 +355,8 @@ body {
 
   &--active:hover,
   &--active:focus {
-    color: $second-color;
-    background: $accent-color;
+    color: var(--second-color);
+    background: var(--accent-color);
   }
 }
 
@@ -351,7 +366,7 @@ body {
   padding: 120px 0px;
 
   background-image: url(../images/prices-bg.png);
-  background-color: $black-bg-color;
+  background-color: var(--black-bg-color);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -372,7 +387,7 @@ body {
   font-weight: 700;
   font-size: 42px;
   line-height: 1.16;
-  color: $second-color;
+  color: var(--second-color);
   letter-spacing: 0.05em;
   margin-bottom: 44px;
 }
@@ -423,7 +438,7 @@ body {
   font-size: 18px;
   line-height: 1.66;
   /* text-align: right; */
-  color: $text-second-color;
+  color: var(--text-second-color);
   letter-spacing: 0.02em;
 
   &--pseudo:last-child {
@@ -436,8 +451,8 @@ body {
   font-size: 12px;
   line-height: 1.33;
   text-transform: uppercase;
-  color: $second-color;
-  border: 1px solid $accent-color;
+  color: var(--second-color);
+  border: 1px solid var(--accent-color);
   border-radius: 25px;
   letter-spacing: 0.09em;
 
@@ -475,7 +490,7 @@ body {
   padding: 20px 24px;
   text-align: center;
 
-  background: $white-bg-color;
+  background: var(--white-bg-color);
 
   &--pseudo:nth-child(2n + 1) {
     margin-right: 30px;
@@ -491,7 +506,7 @@ body {
   font-size: 42px;
   line-height: 1.35;
   text-align: center;
-  color: $primary-color;
+  color: var(--primary-color);
   letter-spacing: 0.05em;
   display: flex;
   justify-content: center;
@@ -502,7 +517,7 @@ body {
     font-size: 16px;
     line-height: 1.37;
     text-align: center;
-    color: $accent-color;
+    color: var(--accent-color);
   }
 }
 
@@ -511,7 +526,7 @@ body {
   font-size: 11px;
   line-height: 1.36;
   text-align: center;
-  color: $primary-color;
+  color: var(--primary-color);
 }
 
 .slogan__wrap {
@@ -525,7 +540,7 @@ body {
   font-size: 11px;
   line-height: 1.36;
   text-transform: uppercase;
-  color: $primary-color;
+  color: var(--primary-color);
   margin-bottom: 20px;
 }
 
@@ -533,7 +548,7 @@ body {
   font-weight: 700;
   font-size: 42px;
   line-height: 1.16;
-  color: $primary-color;
+  color: var(--primary-color);
   letter-spacing: 0.05em;
   margin-bottom: 20px;
   padding-right: 70px;
@@ -543,7 +558,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.66;
-  color: $text-primary-color;
+  color: var(--text-primary-color);
   letter-spacing: 0.02em;
 }
 
@@ -551,7 +566,7 @@ body {
 
 .barbers {
   padding: 120px 0px;
-  background-color: $white-bg-color;
+  background-color: var(--white-bg-color);
 }
 
 .barbers__pre-title {
@@ -559,7 +574,7 @@ body {
   font-size: 11px;
   line-height: 1.36;
   text-transform: uppercase;
-  color: $primary-color;
+  color: var(--primary-color);
   margin-bottom: 20px;
 }
 
@@ -567,7 +582,7 @@ body {
   font-weight: 700;
   font-size: 42px;
   line-height: 1.16;
-  color: $primary-color;
+  color: var(--primary-color);
   letter-spacing: 0.05em;
   margin-bottom: 44px;
 }
@@ -613,7 +628,7 @@ body {
 .barbers__cover-text {
   position: absolute;
   top: 0;
-  color: $second-color;
+  color: var(--second-color);
   font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
@@ -629,7 +644,7 @@ body {
   font-size: 18px;
   line-height: 1.38;
   /* text-align: center; */
-  color: $primary-color;
+  color: var(--primary-color);
   letter-spacing: 0.02em;
   margin-top: 30px;
   margin-bottom: 8px;
@@ -641,7 +656,7 @@ body {
   font-size: 14px;
   line-height: 1.35;
   /* text-align: center; */
-  color: $accent-color;
+  color: var(--accent-color);
   letter-spacing: 0.02em;
   margin-bottom: 30px;
   text-align: center;
@@ -670,12 +685,12 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: $second-color;
-  color: $primary-color;
+  background-color: var(--second-color);
+  color: var(--primary-color);
 
   &--active:hover {
-    background-color: $second-color;
-    color: $accent-color;
+    background-color: var(--second-color);
+    color: var(--accent-color);
   }
 }
 
@@ -714,7 +729,7 @@ body {
   font-size: 11px;
   line-height: 1.36;
   text-transform: uppercase;
-  color: $primary-color;
+  color: var(--primary-color);
   margin-bottom: 44px;
 }
 
@@ -737,7 +752,7 @@ body {
 
 .block-wrapper {
   display: flex;
-  background: $black-bg-color;
+  background: var(--black-bg-color);
   background-image: url(../images/contacts-bg.png);
   background-repeat: no-repeat;
   background-position: center right calc(50% - 15px - 392px);
@@ -760,7 +775,7 @@ body {
   font-weight: 700;
   font-size: 42px;
   line-height: 1.16;
-  color: $second-color;
+  color: var(--second-color);
   letter-spacing: 0.05em;
   margin-bottom: 44px;
 }
@@ -802,19 +817,19 @@ body {
   &--active:focus,
   &--active:hover {
     outline: transparent;
-    border-bottom-color: $second-color;
+    border-bottom-color: var(--second-color);
   }
 
   &--active:focus::placeholder,
   &--active:hover::placeholder {
-    color: $second-color;
+    color: var(--second-color);
   }
 }
 
 .form__button {
   width: 160px;
   height: 40px;
-  border: 1px solid $accent-color;
+  border: 1px solid var(--accent-color);
   border-radius: 25px;
   font-weight: 600;
   font-size: 12px;
@@ -822,7 +837,7 @@ body {
   text-align: center;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: $second-color;
+  color: var(--second-color);
 }
 
 /* <-----------address-contacts-----------> */
@@ -837,7 +852,7 @@ body {
   font-weight: 700;
   font-size: 42px;
   line-height: 1.16;
-  color: $second-color;
+  color: var(--second-color);
   letter-spacing: 0.05em;
   margin-bottom: 40px;
 }
@@ -858,7 +873,7 @@ body {
   font-weight: 700;
   font-size: 18px;
   line-height: 1.66;
-  color: $text-second-color;
+  color: var(--text-second-color);
   letter-spacing: 0.02em;
 }
 
@@ -866,7 +881,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.66;
-  color: $text-second-color;
+  color: var(--text-second-color);
   letter-spacing: 0.02em;
 }
 
@@ -875,7 +890,7 @@ body {
   font-size: 18px;
   line-height: 1.66;
   text-decoration-line: underline;
-  color: $text-second-color;
+  color: var(--text-second-color);
   letter-spacing: 0.02em;
 }
 
@@ -884,7 +899,7 @@ body {
   font-size: 11px;
   line-height: 1.36;
   text-transform: uppercase;
-  color: $second-color;
+  color: var(--second-color);
   margin-top: 70px;
   margin-bottom: 20px;
 }
@@ -893,7 +908,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.66;
-  color: $text-second-color;
+  color: var(--text-second-color);
   letter-spacing: 0.02em;
 }
 
@@ -908,7 +923,7 @@ body {
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
-  color: $text-second-color;
+  color: var(--text-second-color);
   letter-spacing: 0.2em;
   padding: 56px 0px;
   /* margin-left: auto; */
@@ -944,13 +959,13 @@ body {
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
-  color: $primary-color;
+  color: var(--primary-color);
   letter-spacing: 0.2em;
   text-decoration: none;
 
   &--active:hover,
   &--active:focus {
-    color: $accent-color;
+    color: var(--accent-color);
   }
 }
 
@@ -962,9 +977,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(85, 85, 85, 0.545);
-  transition:
-    opacity 300ms linear,
-    visibility 300ms linear;
+  transition: opacity 300ms linear, visibility 300ms linear;
 }
 
 .backdrop.is-hidden .modal {
@@ -978,7 +991,7 @@ body {
   transform: translate(-50%, -50%) scale(1);
   width: 500px;
   height: 700px;
-  background-color: $second-color;
+  background-color: var(--second-color);
   border-radius: 5px;
   padding: 35px;
   transition: transform 500ms;
@@ -991,7 +1004,7 @@ body {
   width: 30px;
   height: 30px;
   background-color: transparent;
-  border: 1px solid $text-second-color;
+  border: 1px solid var(--text-second-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1008,7 +1021,7 @@ body {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.5;
-  color: $primary-color;
+  color: var(--primary-color);
   text-align: center;
   margin-bottom: 10px;
 }
@@ -1023,34 +1036,32 @@ body {
   height: 40px;
   padding-left: 40px;
   /* margin-bottom: 28px; */
-  background: $second-color;
-  box-shadow:
-    0px 1px 3px rgba(0, 0, 0, 0.12),
-    0px 1px 1px rgba(0, 0, 0, 0.14),
+  background: var(--second-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  color: $primary-color;
+  color: var(--primary-color);
   font-size: 14px;
   line-height: 1.2;
 
   &--attribute::placeholder {
-    color: $accent-color;
+    color: var(--accent-color);
     font-weight: 700;
   }
 
   &--compulsory:required {
-    border-color: $text-second-color;
+    border-color: var(--text-second-color);
   }
 
   &--active:focus,
   &--active:hover {
-    border-color: $accent-color;
+    border-color: var(--accent-color);
     outline: transparent;
   }
 
   &--active:focus + svg,
   &--active:hover + svg {
-    fill: $accent-color;
+    fill: var(--accent-color);
   }
 
   &--pseudo:not(:focus):not(:placeholder-shown):valid {
@@ -1063,7 +1074,7 @@ body {
 }
 
 input[type="radio"]:checked + label {
-  color: $accent-color;
+  color: var(--accent-color);
 }
 
 .modal__input-wrapper {
@@ -1082,10 +1093,8 @@ input[type="radio"]:checked + label {
   width: 100%;
   height: 80px;
   max-height: 250px;
-  background: $second-color;
-  box-shadow:
-    0px 1px 3px rgba(0, 0, 0, 0.12),
-    0px 1px 1px rgba(0, 0, 0, 0.14),
+  background: var(--second-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   resize: vertical;
@@ -1095,7 +1104,7 @@ input[type="radio"]:checked + label {
   padding-left: 40px;
 
   &--attribute::placeholder {
-    color: $accent-color;
+    color: var(--accent-color);
     font-weight: 700;
   }
 }

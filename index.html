@@ -14,7 +14,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
-    <link rel="stylesheet" href="./css/main.min.css" />
+    <!-- <link rel="stylesheet" href="./css/main.min.css" /> -->
+    <link rel="stylesheet" href="main.css" />
     <title>Barbershop</title>
   </head>
   <body>
@@ -26,36 +27,26 @@
         <nav class="header__navigation">
           <ul class="header__list list">
             <li class="header__item item">
-              <a href="" class="header__link header__link--active link"
-                >About</a
-              >
+              <a href="" class="header__link active link">About</a>
             </li>
             <li class="header__item item">
-              <a href="" class="header__link header__link--active link"
+              <a href="" class="header__link active link"
                 >Services and prices</a
               >
             </li>
             <li class="header__item item">
-              <a href="" class="header__link header__link--active link"
-                >Barbers</a
-              >
+              <a href="" class="header__link active link">Barbers</a>
             </li>
             <li class="header__item item">
-              <a href="" class="header__link header__link--active link"
-                >Contacts</a
-              >
+              <a href="" class="header__link active link">Contacts</a>
             </li>
           </ul>
         </nav>
         <div class="header__contact">
-          <a href="tel:+380441111111" class="header__tel header__link--active link"
+          <a href="tel:+380441111111" class="header__tel active link"
             >+38 044 111 11 11</a
           >
-          <button
-            type="button"
-            class="header__button header__button--active"
-            data-modal-open
-          >
+          <button type="button" class="header__button bg__btn" data-modal-open>
             Online-booking
           </button>
         </div>
@@ -204,7 +195,9 @@
               </li>
             </ul>
           </div>
-          <button class="prices__button header__button--active" type="button">online-booking</button>
+          <button class="prices__button bg__btn" type="button">
+            online-booking
+          </button>
         </div>
       </section>
       <section class="slogan">
@@ -502,7 +495,9 @@
                 name="massage"
                 placeholder="Message"
               ></textarea>
-              <button type="button" class="form__button header__button--active">send</button>
+              <button type="button" class="form__button bg__btn">
+                send
+              </button>
             </form>
           </section>
           <section class="address">
@@ -563,6 +558,8 @@
         </div>
       </div>
     </footer>
+
+    <!---------------------- modal -------------------------->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="modal__close-btn" data-modal-close>
