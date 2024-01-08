@@ -14,7 +14,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
-    <!-- <link rel="stylesheet" href="./css/main.min.css" /> -->
     <link rel="stylesheet" href="main.css" />
     <title>Barbershop</title>
   </head>
@@ -518,7 +517,7 @@
             <div class="modal__input-wrapper">
               <input
                 type="text"
-                class="modal__input modal__input--attribute modal__input--compulsory modal__input--active modal__input--pseudo"
+                class="modal__input"
                 placeholder="enter name"
                 name="name"
                 required
@@ -533,7 +532,7 @@
             <div class="modal__input-wrapper">
               <input
                 type="tel"
-                class="modal__input modal__input--attribute modal__input--compulsory modal__input--active modal__input--pseudo"
+                class="modal__input"
                 placeholder="enter phone number"
                 name="phone number"
                 pattern="[\+]\d{3}\s[\(]\d{2}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}"
@@ -551,7 +550,7 @@
             <div class="modal__input-wrapper">
               <input
                 type="email"
-                class="modal__input modal__input--attribute modal__input--compulsory modal__input--active modal__input--pseudo"
+                class="modal__input"
                 placeholder="enter email"
                 name="email"
                 required
@@ -598,7 +597,7 @@
           <div class="modal__wrap">
             <label for="">Text</label>
             <textarea
-              class="modal__text modal__text--attribute"
+              class="modal__text"
               name="comment"
               id="comment"
               placeholder="enter comment"
@@ -608,6 +607,7 @@
         </form>
       </div>
     </div>
+    
     <script src="./js/modal.js"></script>
   </body>
 </html>

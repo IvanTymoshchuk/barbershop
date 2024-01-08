@@ -247,7 +247,7 @@ body {
       rgba(25, 28, 38, 0.2),
       rgba(25, 28, 38, 0.2)
     ),
-    url(../images/hero-bg.jpg);
+    url(./images/hero-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -365,7 +365,7 @@ body {
 .prices {
   padding: 120px 0px;
 
-  background-image: url(../images/prices-bg.png);
+  background-image: url(./images/prices-bg.png);
   background-color: var(--black-bg-color);
   background-repeat: no-repeat;
   background-size: cover;
@@ -730,7 +730,7 @@ body {
 .block-wrapper {
   display: flex;
   background: var(--black-bg-color);
-  background-image: url(../images/contacts-bg.png);
+  background-image: url(./images/contacts-bg.png);
   background-repeat: no-repeat;
   background-position: center right calc(50% - 15px - 392px);
   background-size: auto 100%;
@@ -1018,26 +1018,26 @@ body {
     font-weight: 700;
   }
 
-  &--compulsory:required {
+  &:required {
     border-color: var(--text-second-color);
   }
 
-  &--active:focus,
-  &--active:hover {
+  &:focus,
+  &:hover {
     border-color: var(--accent-color);
     outline: transparent;
   }
 
-  &--active:focus + svg,
-  &--active:hover + svg {
+  &:focus + svg,
+  &:hover + svg {
     fill: var(--accent-color);
   }
 
-  &--pseudo:not(:focus):not(:placeholder-shown):valid {
+  &:not(:focus):not(:placeholder-shown):valid {
     background-color: rgba(0, 255, 0, 0.2);
   }
 
-  &--pseudo:not(:focus):not(:placeholder-shown):invalid {
+  &:not(:focus):not(:placeholder-shown):invalid {
     background-color: rgba(255, 0, 0, 0.2);
   }
 }
@@ -1072,7 +1072,7 @@ input[type="radio"]:checked + label {
   padding: 10px;
   padding-left: 40px;
 
-  &--attribute::placeholder {
+  &::placeholder {
     color: var(--accent-color);
     font-weight: 700;
   }
