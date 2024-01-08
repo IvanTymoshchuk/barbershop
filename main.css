@@ -605,24 +605,9 @@ body {
   flex-basis: calc((100% - 60px) / 3);
 } */
 
-.barbers__link {
-  &--active:hover .barbers__cover-text {
-    transform: translateY(0);
-    transition: transform 400ms linear;
-  }
-
-  &--active:focus .barbers__cover-text {
-    transform: translateY(0);
-    transition: transform 400ms linear;
-  }
-}
-
 .barbers__thumb {
   position: relative;
   overflow: hidden;
-}
-
-.barbers__img {
 }
 
 .barbers__cover-text {
@@ -687,11 +672,6 @@ body {
   border-radius: 50%;
   background-color: var(--second-color);
   color: var(--primary-color);
-
-  &--active:hover {
-    background-color: var(--second-color);
-    color: var(--accent-color);
-  }
 }
 
 /* .barber-soc-link:hover .barbers-soc-icons {
@@ -962,11 +942,6 @@ body {
   color: var(--primary-color);
   letter-spacing: 0.2em;
   text-decoration: none;
-
-  &--active:hover,
-  &--active:focus {
-    color: var(--accent-color);
-  }
 }
 
 /* <-----------modal window-----------> */
