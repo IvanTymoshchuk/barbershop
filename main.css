@@ -623,6 +623,10 @@ body {
   transform: translateY(100%);
   transition: transform 300ms linear;
 }
+.barbers__thumb:hover .barbers__cover-text {
+  transform: translateY(0);
+  transition: transform 400ms linear;
+}
 
 .barbers__name {
   font-weight: 400;
